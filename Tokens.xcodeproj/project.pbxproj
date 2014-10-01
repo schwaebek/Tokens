@@ -16,6 +16,8 @@
 		2771828F19DC36DC007E5FD8 /* FSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771828E19DC36DC007E5FD8 /* FSTableViewController.swift */; };
 		2771829119DC3751007E5FD8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771829019DC3751007E5FD8 /* FirstViewController.swift */; };
 		2771829319DC376D007E5FD8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771829219DC376D007E5FD8 /* SecondViewController.swift */; };
+		2771829519DC76C4007E5FD8 /* InstaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771829419DC76C4007E5FD8 /* InstaTableViewCell.swift */; };
+		2771829719DC7782007E5FD8 /* IGTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771829619DC7782007E5FD8 /* IGTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		2771828E19DC36DC007E5FD8 /* FSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTableViewController.swift; sourceTree = "<group>"; };
 		2771829019DC3751007E5FD8 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		2771829219DC376D007E5FD8 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2771829419DC76C4007E5FD8 /* InstaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaTableViewCell.swift; sourceTree = "<group>"; };
+		2771829619DC7782007E5FD8 /* IGTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				2771826E19DC3503007E5FD8 /* AppDelegate.swift */,
 				2771828E19DC36DC007E5FD8 /* FSTableViewController.swift */,
 				2771827019DC3503007E5FD8 /* ViewController.swift */,
+				2771829619DC7782007E5FD8 /* IGTableViewController.swift */,
+				2771829419DC76C4007E5FD8 /* InstaTableViewCell.swift */,
 				2771829019DC3751007E5FD8 /* FirstViewController.swift */,
 				2771829219DC376D007E5FD8 /* SecondViewController.swift */,
 				2771827219DC3503007E5FD8 /* Main.storyboard */,
@@ -227,6 +233,8 @@
 				2771828F19DC36DC007E5FD8 /* FSTableViewController.swift in Sources */,
 				2771829319DC376D007E5FD8 /* SecondViewController.swift in Sources */,
 				2771829119DC3751007E5FD8 /* FirstViewController.swift in Sources */,
+				2771829719DC7782007E5FD8 /* IGTableViewController.swift in Sources */,
+				2771829519DC76C4007E5FD8 /* InstaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +428,7 @@
 				2771828A19DC3503007E5FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2771828B19DC3503007E5FD8 /* Build configuration list for PBXNativeTarget "TokensTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +437,7 @@
 				2771828D19DC3503007E5FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

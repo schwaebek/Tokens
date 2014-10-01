@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jlD-Wd-AQZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item 2-->
@@ -15,7 +16,53 @@
                     <view key="view" contentMode="scaleToFill" id="glk-Wy-1Xj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLh-vC-bam">
+                                <rect key="frame" x="76" y="39" width="449" height="88"/>
+                                <color key="backgroundColor" red="0.249843486" green="0.72435290399999996" blue="0.47129592320000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Instagram Connect">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="instaConnect:" destination="Mh6-re-2bj" eventType="touchUpInside" id="dHT-sq-PYJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKt-77-Vua">
+                                <rect key="frame" x="76" y="201" width="449" height="88"/>
+                                <color key="backgroundColor" red="1" green="0.81297078270510237" blue="0.32019214412746599" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="My Feed">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getMyFeed:" destination="Mh6-re-2bj" eventType="touchUpInside" id="ygQ-si-W6v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nh-ch-3k4">
+                                <rect key="frame" x="76" y="373" width="449" height="88"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Where's Waldo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findWaldo:" destination="Mh6-re-2bj" eventType="touchUpInside" id="9SL-IR-47V"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Nh-ch-3k4" secondAttribute="trailing" constant="59" id="2WF-yq-whv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KKt-77-Vua" secondAttribute="trailing" constant="59" id="6FK-EW-2fC"/>
+                            <constraint firstItem="KKt-77-Vua" firstAttribute="leading" secondItem="glk-Wy-1Xj" secondAttribute="leadingMargin" constant="60" id="Gwr-AN-qBw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JLh-vC-bam" secondAttribute="trailing" constant="59" id="VXO-ON-tvd"/>
+                            <constraint firstItem="JLh-vC-bam" firstAttribute="top" secondItem="f98-Qy-wkD" secondAttribute="bottom" constant="19" id="XyC-Wh-XH3"/>
+                            <constraint firstItem="JLh-vC-bam" firstAttribute="leading" secondItem="glk-Wy-1Xj" secondAttribute="leadingMargin" constant="60" id="aKP-DF-rGu"/>
+                            <constraint firstItem="1Nh-ch-3k4" firstAttribute="leading" secondItem="glk-Wy-1Xj" secondAttribute="leadingMargin" constant="60" id="bb3-gu-Fpf"/>
+                            <constraint firstItem="KKt-77-Vua" firstAttribute="top" secondItem="JLh-vC-bam" secondAttribute="bottom" constant="74" id="eON-Qa-h4b"/>
+                            <constraint firstItem="1Nh-ch-3k4" firstAttribute="top" secondItem="KKt-77-Vua" secondAttribute="bottom" constant="84" id="xeL-Qq-CNl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="U7R-Qr-7Dy"/>
                 </viewController>
@@ -105,6 +152,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wf8-3A-KP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1697" y="198"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Jit-EV-qDR">
+            <objects>
+                <tableViewController storyboardIdentifier="instaTVC" id="Vwf-ki-vpQ" customClass="IGTableViewController" customModule="Tokens" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" sectionHeaderHeight="22" sectionFooterHeight="22" id="XdT-xb-Jol">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="instaCell" rowHeight="402" id="coK-Y5-GfE" customClass="InstaTableViewCell" customModule="Tokens" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="coK-Y5-GfE" id="Suo-EJ-nNd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGp-mU-ZEa">
+                                            <rect key="frame" x="20" y="14" width="561" height="374"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="instaView" destination="qGp-mU-ZEa" id="e3m-cf-fys"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vwf-ki-vpQ" id="Ivq-iE-DiB"/>
+                            <outlet property="delegate" destination="Vwf-ki-vpQ" id="FAJ-Hk-RfB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3DF-sJ-tfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="877"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jax-aP-f7L">
