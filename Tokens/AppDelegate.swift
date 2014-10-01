@@ -8,6 +8,8 @@
 
 import UIKit
 
+var FS_TOKEN = ""
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool {
+        
+        let range = url.absoluteString!.startIndex..<url.absoluteString!.endIndex
+        
+        FS_TOKEN = url.absoluteString!.stringByReplacingOccurrencesOfString("tokens://tokens.com#access_token=", withString: "", options: NSStringCompareOptions.allZeros, range: range)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setObject(FS_TOKEN, forKey: "FS_TOKEN")
+        defaults.synchronize()
+        
+        
+//        var sb = UIStoryboard(name: "Main", bundle: nil)
+//        (UIApplication.sharedApplication()windows[0] as UIWindow).rootViewController? as UITabBarController).viewControllers! [0] as FirstViewController
+//        
+//        var firstVC = sb.instantiateViewControllerWithIdentifier("firstVC") as FirstViewController
+//        
+//        println(firstVC)
+//        
+//        firstVC.token = token!
+        
         return true
     }
 

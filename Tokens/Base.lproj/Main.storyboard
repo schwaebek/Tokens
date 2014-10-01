@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jlD-Wd-AQZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Item 2-->
         <scene sceneID="cA9-YJ-KRv">
             <objects>
-                <viewController id="Mh6-re-2bj" sceneMemberID="viewController">
+                <viewController id="Mh6-re-2bj" customClass="SecondViewController" customModule="Tokens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f98-Qy-wkD"/>
                         <viewControllerLayoutGuide type="bottom" id="TVQ-5G-Key"/>
@@ -26,7 +26,7 @@
         <!--Item 1-->
         <scene sceneID="vmr-U9-a2U">
             <objects>
-                <viewController id="iCg-k8-oGt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstVC" id="iCg-k8-oGt" customClass="FirstViewController" customModule="Tokens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zdi-1E-hEo"/>
                         <viewControllerLayoutGuide type="bottom" id="uM4-qt-Ha8"/>
@@ -36,19 +36,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HO-GO-dOP">
-                                <rect key="frame" x="229" y="80" width="143" height="30"/>
+                                <rect key="frame" x="187" y="39" width="227" height="66"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="FourSquare Connect">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="foursquareConnect:" destination="iCg-k8-oGt" eventType="touchUpInside" id="i7T-t5-pkC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFc-qe-8KE">
+                                <rect key="frame" x="187" y="141" width="227" height="74"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Locations Near Me">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findLocations:" destination="iCg-k8-oGt" eventType="touchUpInside" id="scL-O8-LWQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L8-qV-Xhi">
+                                <rect key="frame" x="187" y="256" width="227" height="74"/>
+                                <color key="backgroundColor" red="1" green="0.19242325580743147" blue="0.23929549308577358" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Where's Waldo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findWaldo:" destination="iCg-k8-oGt" eventType="touchUpInside" id="m3K-lI-X03"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="FUq-e1-7Ef"/>
+                    <connections>
+                        <outlet property="fsConnect" destination="0HO-GO-dOP" id="Qhi-nk-3O1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F7-H2-AVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002" y="198"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="XmH-rA-Yhv">
+            <objects>
+                <tableViewController storyboardIdentifier="foursquareTVC" id="Pl8-iJ-rMA" customClass="FSTableViewController" customModule="Tokens" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ojg-Ve-q2b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="2Nr-lX-6q2">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Nr-lX-6q2" id="QHb-Yq-aWY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pl8-iJ-rMA" id="II4-0h-p3h"/>
+                            <outlet property="delegate" destination="Pl8-iJ-rMA" id="wXL-DC-Tjg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wf8-3A-KP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="198"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jax-aP-f7L">

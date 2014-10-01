@@ -13,6 +13,9 @@
 		2771827619DC3503007E5FD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2771827519DC3503007E5FD8 /* Images.xcassets */; };
 		2771827919DC3503007E5FD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2771827719DC3503007E5FD8 /* LaunchScreen.xib */; };
 		2771828519DC3503007E5FD8 /* TokensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771828419DC3503007E5FD8 /* TokensTests.swift */; };
+		2771828F19DC36DC007E5FD8 /* FSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771828E19DC36DC007E5FD8 /* FSTableViewController.swift */; };
+		2771829119DC3751007E5FD8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771829019DC3751007E5FD8 /* FirstViewController.swift */; };
+		2771829319DC376D007E5FD8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771829219DC376D007E5FD8 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		2771827E19DC3503007E5FD8 /* TokensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TokensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2771828319DC3503007E5FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2771828419DC3503007E5FD8 /* TokensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensTests.swift; sourceTree = "<group>"; };
+		2771828E19DC36DC007E5FD8 /* FSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTableViewController.swift; sourceTree = "<group>"; };
+		2771829019DC3751007E5FD8 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		2771829219DC376D007E5FD8 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				2771826E19DC3503007E5FD8 /* AppDelegate.swift */,
+				2771828E19DC36DC007E5FD8 /* FSTableViewController.swift */,
 				2771827019DC3503007E5FD8 /* ViewController.swift */,
+				2771829019DC3751007E5FD8 /* FirstViewController.swift */,
+				2771829219DC376D007E5FD8 /* SecondViewController.swift */,
 				2771827219DC3503007E5FD8 /* Main.storyboard */,
 				2771827519DC3503007E5FD8 /* Images.xcassets */,
 				2771827719DC3503007E5FD8 /* LaunchScreen.xib */,
@@ -161,6 +170,7 @@
 				TargetAttributes = {
 					2771826819DC3503007E5FD8 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = WW3AF2LH6C;
 					};
 					2771827D19DC3503007E5FD8 = {
 						CreatedOnToolsVersion = 6.0;
@@ -214,6 +224,9 @@
 			files = (
 				2771827119DC3503007E5FD8 /* ViewController.swift in Sources */,
 				2771826F19DC3503007E5FD8 /* AppDelegate.swift in Sources */,
+				2771828F19DC36DC007E5FD8 /* FSTableViewController.swift in Sources */,
+				2771829319DC376D007E5FD8 /* SecondViewController.swift in Sources */,
+				2771829119DC3751007E5FD8 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tokens/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tokens/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
