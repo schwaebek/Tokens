@@ -43,6 +43,9 @@ class FSTableViewController: UITableViewController {
         if (item["firstName"] != nil) && (item["lastName"] != nil) {
             cell.textLabel?.text = (item["firstName"]! as String) + (item["lastName"]! as String)
         }
+        if (item["name"] != nil) {
+            cell.textLabel?.text = item["name"]! as? String
+        }
         // Configure the cell...
 
         return cell

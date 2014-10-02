@@ -26,13 +26,13 @@ class FirstViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if defaults.objectForKey("FS_TOKEN") != nil {
-            fsConnect.alpha = 0
+           // fsConnect.alpha = 0
             FS_TOKEN = defaults.objectForKey("FS_TOKEN")! as String
         }
         NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             let defaults = NSUserDefaults.standardUserDefaults()
             if defaults.objectForKey("FS_TOKEN") != nil {
-                self.fsConnect.alpha = 0
+                //self.fsConnect.alpha = 0
                 
             }
         }
@@ -53,25 +53,40 @@ class FirstViewController: UIViewController {
         UIApplication.sharedApplication().openURL(NSURL(string: AUTH_URL))
     }
     @IBAction func findLocations(sender: AnyObject) {
-        foursquareRequest("venues/search", parameter: "near=Buckhead,GA")
+        //foursquareRequest("venues/search", parameter: "near=Buckhead,GA")
+        foursquareRequest("venues/search", parameter: "near=Buckhead,GA") { (resultInfo) -> [AnyObject] in
+      
+            return resultInfo["response"]!["venues"]! as [AnyObject]
+
+        }
     }
+        
     @IBAction func findWaldo(sender: AnyObject) {
-        foursquareRequest("users/search", parameter: "name=waldo")
+        //foursquareRequest("users/search", parameter: "name=waldo")
+        foursquareRequest("users/search", parameter: "name=waldo") { (resultInfo) -> [AnyObject] in
+            
+            return resultInfo["response"]!["results"]! as [AnyObject]
+            
+
+        }
     }
-    func foursquareRequest(endpoint: String, parameter: String) {
+    func foursquareRequest(endpoint: String, parameter: String, completion: (resultInfo:[String : AnyObject]) -> [AnyObject]) {
         var request = NSURLRequest(URL: NSURL(string: API_URL + endpoint + "?oauth_token=" + FS_TOKEN + "&v=20141001&" + parameter))
+        
         println(request.URL.absoluteString)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response, data, error) -> Void in
+            
             var resultInfo = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: nil) as [String:AnyObject]
             
-            println(resultInfo["response"]!["results"])
             
             var fsTVC = self.storyboard!.instantiateViewControllerWithIdentifier("foursquareTVC") as FSTableViewController
-            fsTVC.items = resultInfo["response"]!["results"]! as [AnyObject]
+            fsTVC.items = completion(resultInfo: resultInfo)
             self.presentViewController(fsTVC, animated: true, completion: nil)
 
+            
+            completion(resultInfo: resultInfo)
             
         }
     }
